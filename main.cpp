@@ -16,6 +16,7 @@ void main_window::on_paint(HDC hdc)
 	Gdiplus::SolidBrush brush2(Gdiplus::Color::White);
 	Gdiplus::StringFormat fmat;
 	Gdiplus::RectF TR(rc.left, rc.top, rc.right, rc.bottom);
+	Gdiplus::RectF TS(rc.left-2, rc.top, rc.right+2, rc.bottom);
 	fmat.SetAlignment(Gdiplus::StringAlignmentCenter);
 	fmat.SetLineAlignment(Gdiplus::StringAlignmentFar);
 
@@ -28,7 +29,7 @@ void main_window::on_paint(HDC hdc)
 	//Gdiplus::PointF point1(); //iskoristiti alignment
 	g.DrawString(fileName.c_str(), -1, &font, TR, &fmat, &brush1);
 	//Gdiplus::PointF point2();
-	g.DrawString(fileName.c_str(), -1, &font, TR, &fmat, &brush2);
+	g.DrawString(fileName.c_str(), -1, &font, TS, &fmat, &brush2);
 
 }
 

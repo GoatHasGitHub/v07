@@ -18,6 +18,9 @@ public:
 };
 
 class main_window : public vsite::nwp::window {
+private: 
+	std::wstring imagePath;
+	std::unique_ptr<Gdiplus::Image > Image;
 protected:
 	void on_paint(HDC hdc) override;
 	void on_command(int id) override;
